@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import MessageUI
 
-class ReservationViewController: UIViewController {
+class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var partyName: UITextField!
     @IBOutlet weak var partyAmount: UITextField!
-    @IBOutlet weak var phonNumber: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var monthTextField: UITextField!
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBAction func confirmReservation(_ sender: Any) {
+        let picker = MFMailComposeViewController()
+        picker.mailComposeDelegate = self
+        
+        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
+        
+        picker.setToRecipients(["codypollard11@hotmail.com"])
+        picker.setSubject("Pollardo Order")
+        picker.setMessageBody(message, isHTML: true)
+        
     }
     
     
@@ -39,5 +49,8 @@ class ReservationViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
