@@ -10,6 +10,16 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
 
+    @IBOutlet weak var numberOfItem: UILabel!
+    @IBOutlet weak var subtotalCost: UILabel!
+    @IBOutlet weak var taxesCost: UILabel!
+    @IBOutlet weak var totalCost: UILabel!
+    
+    @IBAction func checkoutButton(_ sender: Any) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,6 +15,9 @@
 		5B357D81233D9D7D00FC43CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */; };
 		5B357D89233DA76700FC43CD /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D88233DA76700FC43CD /* CartTableViewController.swift */; };
 		5B357D8B233DA78B00FC43CD /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */; };
+		5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E08236260A900FC43CD /* DetailViewController.swift */; };
+		5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E0A236263A500FC43CD /* ReservationViewController.swift */; };
+		5B357E0D236263C100FC43CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E0C236263C100FC43CD /* PersonalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		5B357D82233D9D7D00FC43CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B357D88233DA76700FC43CD /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
 		5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
+		5B357E08236260A900FC43CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5B357E0A236263A500FC43CD /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		5B357E0C236263C100FC43CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				5B357D88233DA76700FC43CD /* CartTableViewController.swift */,
 				5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */,
 				5B357D77233D9D7B00FC43CD /* Main.storyboard */,
+				5B357E08236260A900FC43CD /* DetailViewController.swift */,
+				5B357E0A236263A500FC43CD /* ReservationViewController.swift */,
+				5B357E0C236263C100FC43CD /* PersonalViewController.swift */,
 				5B357D7D233D9D7D00FC43CD /* Assets.xcassets */,
 				5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */,
 				5B357D82233D9D7D00FC43CD /* Info.plist */,
@@ -146,8 +155,11 @@
 			files = (
 				5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */,
 				5B357D89233DA76700FC43CD /* CartTableViewController.swift in Sources */,
+				5B357E0D236263C100FC43CD /* PersonalViewController.swift in Sources */,
 				5B357D7C233D9D7B00FC43CD /* Pollardos.xcdatamodeld in Sources */,
+				5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */,
 				5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */,
+				5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */,
 				5B357D8B233DA78B00FC43CD /* MenuCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
