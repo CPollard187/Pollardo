@@ -10,11 +10,31 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+//private let api = MealDB()
+
 class MenuCollectionViewController: UICollectionViewController {
 
+    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuName: UILabel!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=soup")
+        
+        //Testing to see if it displays
+        let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
+        
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            if error == nil {
+                let imageLoaded = UIImage(data: data!)
+                
+                self.menuImage.image = imageLoaded
+                
+            }
+        }
+        task.resume()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,6 +44,16 @@ class MenuCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

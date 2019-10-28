@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var companyInfo: UILabel!
     @IBOutlet weak var deals: UILabel!
     @IBOutlet weak var logo: UIImageView!
+
     @IBOutlet weak var dealImage: UIImageView!
     
     override func viewDidLoad() {
