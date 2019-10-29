@@ -21,18 +21,42 @@ class MenuCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=soup")
+        let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=soup")
         
         //Testing to see if it displays
-        let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
+        //let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
         
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
-            if error == nil {
-                let imageLoaded = UIImage(data: data!)
-                
-                self.menuImage.image = imageLoaded
-                
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                do {
+                    
+                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String : Any]]
+                    for item in parsedData
+                    {
+                        //Pull the String thats under the item strMeal
+                        //Display it in the menuName Label as text
+                        let nameLoaded = item["strMeal"] as! String
+                        self.menuName.text = nameLoaded
+                        
+                        //Pull the string of the image strMealThumb
+                        //Display it as a UIImage
+                        let imageLoaded = item["strMealThumb"] as! UIImage
+                        self.menuImage.image = imageLoaded
+                    }
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
             }
+
+//            if error == nil {
+//                let imageLoaded = UIImage(data: data!)
+//
+//                self.menuImage.image = imageLoaded
+//
+//            }
         }
         task.resume()
         // Uncomment the following line to preserve selection between presentations

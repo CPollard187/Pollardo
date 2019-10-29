@@ -18,9 +18,24 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var dealImage: UIImageView!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //Testing to see if it displays
+        let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
+        
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            if error == nil {
+                let imageLoaded = UIImage(data: data!)
+                
+                self.dealImage.image = imageLoaded
+                
+            }
+        }
+        task.resume()
     }
 
 
