@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 //private let api = MealDB()
 
@@ -21,7 +20,7 @@ class MenuCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=soup")
+        let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         
         //Testing to see if it displays
         //let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
@@ -63,20 +62,10 @@ class MenuCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
 
         // Do any additional setup after loading the view.
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }    
     
     /*
     // MARK: - Navigation
@@ -102,8 +91,9 @@ class MenuCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        //cell.menuImage.image = menuImage
+        
         // Configure the cell
     
         return cell

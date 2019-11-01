@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //Testing to see if it displays
-        let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
+        let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg")
         
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             if error == nil {

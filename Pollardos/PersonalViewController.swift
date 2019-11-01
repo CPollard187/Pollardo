@@ -21,16 +21,17 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        let fNameText = fNameTextField.text
+        let lNameText = lNameTextField.text
+        let phoneNumber = phoneNumberTextField.text
+        
         fNameTextField.delegate = self
         lNameTextField.delegate = self
         emailTextField.delegate = self
         phoneNumberTextField.delegate = self
         
-        let fNameText: String? = fNameTextField.text
-        let lNameText = lNameTextField.text
-        let phoneNumber = phoneNumberTextField.text
         
-        
+
     }
     
     
@@ -48,9 +49,6 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         picker.setMessageBody(message, isHTML: true)
         
     }
-    
-
-    
 
     /*
     // MARK: - Navigation
@@ -61,6 +59,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         // Pass the selected object to the new view controller.
     }
     */
+    
     //When they send the email it will close and go back to the confirm cart screen
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
