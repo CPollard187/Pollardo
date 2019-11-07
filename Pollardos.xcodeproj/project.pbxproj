@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B06A3862374C78100C4AC8A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3842374C77E00C4AC8A /* RealmSwift.framework */; };
+		5B06A3872374C78100C4AC8A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3842374C77E00C4AC8A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B06A3882374C78100C4AC8A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3852374C78100C4AC8A /* Realm.framework */; };
+		5B06A3892374C78100C4AC8A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3852374C78100C4AC8A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06A38C2374CF4B00C4AC8A /* Menu.swift */; };
 		5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D73233D9D7B00FC43CD /* AppDelegate.swift */; };
 		5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D75233D9D7B00FC43CD /* HomeViewController.swift */; };
 		5B357D79233D9D7B00FC43CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B357D77233D9D7B00FC43CD /* Main.storyboard */; };
@@ -20,7 +25,25 @@
 		5B357E0D236263C100FC43CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E0C236263C100FC43CD /* PersonalViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B06A38A2374C78100C4AC8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B06A3892374C78100C4AC8A /* Realm.framework in Embed Frameworks */,
+				5B06A3872374C78100C4AC8A /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5B06A3842374C77E00C4AC8A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		5B06A3852374C78100C4AC8A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		5B06A38C2374CF4B00C4AC8A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		5B357D70233D9D7B00FC43CD /* Pollardos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pollardos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B357D73233D9D7B00FC43CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B357D75233D9D7B00FC43CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -41,17 +64,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B06A3882374C78100C4AC8A /* Realm.framework in Frameworks */,
+				5B06A3862374C78100C4AC8A /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B06A3802374C76800C4AC8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B357D67233D9D7B00FC43CD = {
 			isa = PBXGroup;
 			children = (
+				5B06A3852374C78100C4AC8A /* Realm.framework */,
+				5B06A3842374C77E00C4AC8A /* RealmSwift.framework */,
 				5B357D72233D9D7B00FC43CD /* Pollardos */,
 				5B357D71233D9D7B00FC43CD /* Products */,
+				5B06A3802374C76800C4AC8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +113,7 @@
 				5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */,
 				5B357D82233D9D7D00FC43CD /* Info.plist */,
 				5B357D7A233D9D7B00FC43CD /* Pollardos.xcdatamodeld */,
+				5B06A38C2374CF4B00C4AC8A /* Menu.swift */,
 			);
 			path = Pollardos;
 			sourceTree = "<group>";
@@ -92,6 +128,8 @@
 				5B357D6C233D9D7B00FC43CD /* Sources */,
 				5B357D6D233D9D7B00FC43CD /* Frameworks */,
 				5B357D6E233D9D7B00FC43CD /* Resources */,
+				5B06A38A2374C78100C4AC8A /* Embed Frameworks */,
+				5B06A38B2374C8E600C4AC8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,6 +186,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B06A38B2374C8E600C4AC8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B357D6C233D9D7B00FC43CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -159,6 +217,7 @@
 				5B357D7C233D9D7B00FC43CD /* Pollardos.xcdatamodeld in Sources */,
 				5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */,
 				5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */,
+				5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */,
 				5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */,
 				5B357D8B233DA78B00FC43CD /* MenuCollectionViewController.swift in Sources */,
 			);
@@ -307,11 +366,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pollardos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.stclairconnect.01pollard.cody.Pollardos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -324,11 +388,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Pollardos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.stclairconnect.01pollard.cody.Pollardos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -13,51 +13,76 @@ import UIKit
 
 class MenuCollectionViewController: UICollectionViewController {
 
+    var results: [Item] = []
+    
     @IBOutlet weak var menuImage: UIImageView!
     @IBOutlet weak var menuName: UILabel!
+    //@IBOutlet var collectionView: UICollectionView!
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
         
         let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         
         //Testing to see if it displays
         //let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
-        
+        results = []
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
+            if let error = error {
+                print("ERROR - \(error)")
             } else {
-                do {
-                    
-                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String : Any]]
-                    for item in parsedData
-                    {
-                        //Pull the String thats under the item strMeal
-                        //Display it in the menuName Label as text
-                        let nameLoaded = item["strMeal"] as! String
-                        self.menuName.text = nameLoaded
+                    do {
+                        guard let data = data else { return }
+                            
+                        let decoder = JSONDecoder()
+                            
+                        let downloadedResults = try decoder.decode(Menu.self, from: data)
+                            
+                        self.results = downloadedResults.results
+                            
+                        } catch let error {
+                            print(error)
+                        }
                         
-                        //Pull the string of the image strMealThumb
-                        //Display it as a UIImage
-                        let imageLoaded = item["strMealThumb"] as! UIImage
-                        self.menuImage.image = imageLoaded
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
                     }
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription)
                 }
-            }
-
-//            if error == nil {
-//                let imageLoaded = UIImage(data: data!)
+                task.resume()
+                    
+//                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String : Any]]
+//                    for item in parsedData
+//                    {
+//                        //Pull the String thats under the item strMeal
+//                        //Display it in the menuName Label as text
+//                        let nameLoaded = item["strMeal"] as! String
+//                        self.menuName.text = nameLoaded
 //
-//                self.menuImage.image = imageLoaded
+//                        //Pull the string of the image strMealThumb
+//                        //Display it as a UIImage
+//                        let imageLoaded = item["strMealThumb"] as! UIImage
+//                        self.menuImage.image = imageLoaded
+//                    }
 //
+//                } catch let error as NSError {
+//                    print(error.localizedDescription)
+//                }
 //            }
-        }
-        task.resume()
+//
+////            if error == nil {
+////                let imageLoaded = UIImage(data: data!)
+////
+////                self.menuImage.image = imageLoaded
+////
+////            }
+//        }
+//        task.resume()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -81,18 +106,19 @@ class MenuCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return results.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        //cell.menuImage.image = menuImage
+        let items = results[indexPath.row]
+        cell.menuName?.text = items.name
         
         // Configure the cell
     
