@@ -8,9 +8,13 @@
 
 import UIKit
 import MessageUI
+import UserNotifications
 
 class PersonalViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
+    var accessGranted = false
+    var badgeCount = 0
+    
     //MARK: OUTLETS
     @IBOutlet weak var fNameTextField: UITextField!
     @IBOutlet weak var lNameTextField: UITextField!
@@ -21,9 +25,9 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let fNameText = fNameTextField.text
-        let lNameText = lNameTextField.text
-        let phoneNumber = phoneNumberTextField.text
+//        let fNameText = fNameTextField.text
+//        let lNameText = lNameTextField.text
+//        let phoneNumber = phoneNumberTextField.text
         
         fNameTextField.delegate = self
         lNameTextField.delegate = self
@@ -35,18 +39,42 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     
-    //When they hit confirm order it will prompt them to send the email.
+    //When they hit confirm order it will send them a nitfication.
     //****MAYBE PROMPT THEM WITH AN ALERT??????****
     @IBAction func confirmOrder(_ sender: Any) {
-        
-        let picker = MFMailComposeViewController()
-        picker.mailComposeDelegate = self
-        
-        let message = "Hello my name is \(fNameTextField) \(lNameTextField). I just ordered from the Pollardo app. Please contact me at \(phoneNumberTextField) if there are any problems."
-        
-        picker.setToRecipients(["codypollard11@hotmail.com"])
-        picker.setSubject("Pollardo Order")
-        picker.setMessageBody(message, isHTML: true)
+        if accessGranted == true {
+            
+            //Create the content of the notification
+            let content = UNMutableNotificationContent()
+            content.title = "Order Confirmed!"
+            content.body = "Your order will be ready in 45 minutes!"
+            content.sound = UNNotificationSound.default
+            content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+            
+            
+            //Create the trigger
+            //In 30 seconds they will get the notification
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false)
+            
+            //Create the request
+            let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
+            
+            //Add the request
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: {
+                error in
+                if error != nil {
+                    print("Error adding a timer notification - \(error!.localizedDescription)")
+                }
+            })
+        }
+//        let picker = MFMailComposeViewController()
+//        picker.mailComposeDelegate = self
+//
+//        let message = "Hello my name is \(fNameTextField) \(lNameTextField). I just ordered from the Pollardo app. Please contact me at \(phoneNumberTextField) if there are any problems."
+//
+//        picker.setToRecipients(["codypollard11@hotmail.com"])
+//        picker.setSubject("Pollardo Order")
+//        picker.setMessageBody(message, isHTML: true)
         
     }
 

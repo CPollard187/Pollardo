@@ -32,7 +32,6 @@ class HomeViewController: UIViewController {
                 let imageLoaded = UIImage(data: data!)
                 
                 self.dealImage.image = imageLoaded
-                
             }
         }
         task.resume()

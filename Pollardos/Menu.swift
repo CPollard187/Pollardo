@@ -23,7 +23,7 @@ struct Item: Codable{
     }
     
     //MARK: - Properties
-    var name:String
+    var name: String
     var category: String
     var country: String
     var image: String

@@ -25,7 +25,6 @@ class MenuCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-
         
         let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         
@@ -55,39 +54,12 @@ class MenuCollectionViewController: UICollectionViewController {
                     }
                 }
                 task.resume()
-                    
-//                    let parsedData = try JSONSerialization.jsonObject(with: data!) as! [[String : Any]]
-//                    for item in parsedData
-//                    {
-//                        //Pull the String thats under the item strMeal
-//                        //Display it in the menuName Label as text
-//                        let nameLoaded = item["strMeal"] as! String
-//                        self.menuName.text = nameLoaded
-//
-//                        //Pull the string of the image strMealThumb
-//                        //Display it as a UIImage
-//                        let imageLoaded = item["strMealThumb"] as! UIImage
-//                        self.menuImage.image = imageLoaded
-//                    }
-//
-//                } catch let error as NSError {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//
-////            if error == nil {
-////                let imageLoaded = UIImage(data: data!)
-////
-////                self.menuImage.image = imageLoaded
-////
-////            }
-//        }
-//        task.resume()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
 
         // Do any additional setup after loading the view.
     }    
@@ -112,17 +84,53 @@ class MenuCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1
+        return results.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        //Should this be .row?
         let items = results[indexPath.row]
+        //FIX ME - cell doesnt have member menuName
         cell.menuName?.text = items.name
         
+        let imageURL = URL(string: items.image)!
+        
+        //Get the image url and convert into an image
+        let imageTask = URLSession.shared.downloadTask(with: imageURL, completionHandler: {
+            url,response,error in
+            if error == nil,
+                let url = url,
+                let data = try? Data(contentsOf: url),
+                let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    //FIX ME - cell doesnt have member menuImage
+                    cell.menuImage?.image = image
+                }
+            }
+        })
+        imageTask.resume()
+
         // Configure the cell
-    
         return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "details":
+            //get the index of the selected cell
+            //FIX ME - Get index path
+            guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
+            //retrieve the menuItem at selected cell
+            //FIX ME - Trying to get index path
+            let menuItem = results[indexPath.index(after: 0)]
+            //get the segue destination's controller
+            let vc = segue.destination as! DetailViewController
+            
+            //FIX ME - Cannot assign value of type Item to type Menu?
+            vc.item = menuItem
+            
+        default: return
+        }
     }
 
     // MARK: UICollectionViewDelegate

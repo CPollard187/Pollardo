@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="qEG-I5-e0b" secondAttribute="bottom" constant="12" id="yRy-99-6Sz"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="2kq-vL-1MT" kind="show" id="DaE-PQ-S4J"/>
+                                    <segue destination="2kq-vL-1MT" kind="show" identifier="details" id="DaE-PQ-S4J"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -707,6 +707,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-3V-NOW">
+                                <rect key="frame" x="67" y="294" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJr-2k-AcW">
                                 <rect key="frame" x="263" y="449" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -728,8 +734,11 @@
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="trailing" secondItem="cXi-y7-c80" secondAttribute="trailing" constant="266" id="5SU-eY-ct1"/>
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="bottom" secondItem="6km-hP-lFS" secondAttribute="bottom" constant="365" id="Hsu-Fw-Irr"/>
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="trailing" secondItem="6km-hP-lFS" secondAttribute="trailing" constant="167" id="KU1-Ua-91U"/>
+                            <constraint firstItem="Wfe-3V-NOW" firstAttribute="leading" secondItem="I7T-Hc-Vhz" secondAttribute="leading" constant="67" id="KaV-Oj-sCA"/>
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="bottom" secondItem="eM2-wV-n1G" secondAttribute="bottom" constant="83" id="KrI-Ik-L32"/>
                             <constraint firstItem="JJr-2k-AcW" firstAttribute="leading" secondItem="I7T-Hc-Vhz" secondAttribute="leading" constant="263" id="LMd-8a-DbK"/>
+                            <constraint firstItem="I7T-Hc-Vhz" firstAttribute="trailing" secondItem="Wfe-3V-NOW" secondAttribute="trailing" constant="266" id="SIK-us-TCY"/>
+                            <constraint firstItem="cXi-y7-c80" firstAttribute="top" secondItem="Wfe-3V-NOW" secondAttribute="bottom" constant="25" id="Tlp-XY-1be"/>
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="bottom" secondItem="cXi-y7-c80" secondAttribute="bottom" constant="257" id="VE5-oq-eS4"/>
                             <constraint firstItem="cXi-y7-c80" firstAttribute="leading" secondItem="I7T-Hc-Vhz" secondAttribute="leading" constant="67" id="WIk-rQ-0gj"/>
                             <constraint firstItem="I7T-Hc-Vhz" firstAttribute="trailing" secondItem="eM2-wV-n1G" secondAttribute="trailing" constant="52" id="ZYW-g8-frL"/>
@@ -738,14 +747,16 @@
                             <constraint firstItem="L94-nC-Uqx" firstAttribute="top" secondItem="I7T-Hc-Vhz" secondAttribute="top" constant="20" id="dey-xV-KhV"/>
                             <constraint firstItem="JJr-2k-AcW" firstAttribute="top" secondItem="L94-nC-Uqx" secondAttribute="bottom" constant="237" id="iio-2d-hPL"/>
                             <constraint firstItem="eM2-wV-n1G" firstAttribute="leading" secondItem="I7T-Hc-Vhz" secondAttribute="leading" constant="246" id="m7p-nE-9QY"/>
-                            <constraint firstItem="cXi-y7-c80" firstAttribute="top" secondItem="L94-nC-Uqx" secondAttribute="bottom" constant="128" id="rii-56-BYi"/>
                             <constraint firstItem="L94-nC-Uqx" firstAttribute="leading" secondItem="I7T-Hc-Vhz" secondAttribute="leading" constant="67" id="s0Y-Lv-okO"/>
                             <constraint firstItem="eM2-wV-n1G" firstAttribute="top" secondItem="JJr-2k-AcW" secondAttribute="bottom" constant="35" id="tAx-ef-Joq"/>
+                            <constraint firstItem="Wfe-3V-NOW" firstAttribute="top" secondItem="L94-nC-Uqx" secondAttribute="bottom" constant="82" id="vzf-Vt-Rwj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I7T-Hc-Vhz"/>
                     </view>
                     <connections>
-                        <outlet property="foodDescription" destination="cXi-y7-c80" id="epn-dj-2CV"/>
+                        <outlet property="foodCategory" destination="Wfe-3V-NOW" id="BEI-TS-uNX"/>
+                        <outlet property="foodCountry" destination="cXi-y7-c80" id="pGS-mM-agl"/>
+                        <outlet property="foodImage" destination="L94-nC-Uqx" id="yJV-5C-ILq"/>
                         <outlet property="foodPrice" destination="JJr-2k-AcW" id="wHr-Er-PnS"/>
                         <outlet property="foodTitle" destination="6km-hP-lFS" id="mmX-a9-94v"/>
                     </connections>

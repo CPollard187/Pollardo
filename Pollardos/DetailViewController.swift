@@ -10,15 +10,24 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var item: Menu?
+    
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var foodTitle: UILabel!
-    @IBOutlet weak var foodDescription: UILabel!
+    @IBOutlet weak var foodCategory: UILabel!
+    @IBOutlet weak var foodCountry: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let menuItem = item {
+            //FIX ME - Menu has no member "-----"
+            foodTitle.text = menuItem.name
+            foodCategory.text = menuItem.category
+            foodCountry.text = menuItem.country
+            foodImage.image = menuItem.image
+        }
     }
     
 
