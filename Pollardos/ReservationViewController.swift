@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import UserNotifications
 
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
@@ -20,14 +21,39 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBAction func confirmReservation(_ sender: Any) {
-        let picker = MFMailComposeViewController()
-        picker.mailComposeDelegate = self
         
-        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
+        //Create the content of the notification
+        let content = UNMutableNotificationContent()
+        content.title = "Reservation Confirmed!"
+        content.body = "Your reservation is set!"
+        content.sound = UNNotificationSound.default
+        content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         
-        picker.setToRecipients(["codypollard11@hotmail.com"])
-        picker.setSubject("Pollardo Order")
-        picker.setMessageBody(message, isHTML: true)
+        //Create the trigger
+        //In 30 seconds they will get the notification
+        //FIX ME HERE
+        //I want it so it send them a notification the day before their reservation
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false)
+        
+        //Create the request
+        let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
+        
+        //Add the request
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {
+            error in
+            if error != nil {
+                print("Error adding a timer notification - \(error!.localizedDescription)")
+            }
+        })
+    }
+//        let picker = MFMailComposeViewController()
+//        picker.mailComposeDelegate = self
+//
+//        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
+//
+//        picker.setToRecipients(["codypollard11@hotmail.com"])
+//        picker.setSubject("Pollardo Order")
+//        picker.setMessageBody(message, isHTML: true)
         
     }
     
