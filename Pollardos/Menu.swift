@@ -8,7 +8,7 @@
 
 import Foundation
 struct Menu: Codable {
-    var results: [Item]
+    var meals: [Item]
 }
 
 struct Item: Codable{

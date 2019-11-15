@@ -30,13 +30,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Stl-U0-GGq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="pollardosLogoWorsds.png" translatesAutoresizingMaskIntoConstraints="NO" id="Stl-U0-GGq">
                                 <rect key="frame" x="67" y="84" width="240" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sf0-VF-NhI">
                                 <rect key="frame" x="67" y="450" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blurb of company here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxX-xW-hYP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="blurb of company here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxX-xW-hYP">
                                 <rect key="frame" x="0.0" y="250" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -409,7 +409,7 @@
                         <outlet property="emailTextField" destination="fuh-Xv-AJB" id="rKw-Ky-Kg4"/>
                         <outlet property="fNameTextField" destination="lJU-08-O5O" id="IAB-cy-msA"/>
                         <outlet property="lNameTextField" destination="4cZ-iT-Loj" id="maJ-yA-lOV"/>
-                        <outlet property="phoneNumberTextField" destination="buH-vn-iYh" id="iah-y5-XuG"/>
+                        <outlet property="phoneNumberTextField" destination="buH-vn-iYh" id="edJ-B8-rtZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ze-B2-ZGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -706,7 +706,7 @@
                         <outlet property="monthTextField" destination="YLz-V0-YP5" id="Ps5-gJ-NUN"/>
                         <outlet property="partyAmount" destination="nrM-TJ-VYJ" id="ePd-Sn-Bd6"/>
                         <outlet property="partyName" destination="caB-GT-FfK" id="kZY-Q1-13r"/>
-                        <outlet property="phonNumber" destination="w7T-tc-4U6" id="4zq-Nq-Hv6"/>
+                        <outlet property="phoneNumber" destination="FTd-bL-jRM" id="fsI-1U-Tr3"/>
                         <outlet property="timeTextField" destination="sTV-Nd-TJw" id="beP-o0-DhU"/>
                     </connections>
                 </viewController>
@@ -817,6 +817,6 @@
         <image name="pollardosLogoWorsds.png" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gu4-MY-YTj"/>
+        <segue reference="9fr-xf-AkJ"/>
     </inferredMetricsTieBreakers>
 </document>

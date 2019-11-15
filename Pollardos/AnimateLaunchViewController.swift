@@ -9,9 +9,6 @@
 import UIKit
 
 class AnimateLaunchViewController: UIViewController {
-    
-    
-
 
     @IBOutlet weak var logo: UIImageView!
     

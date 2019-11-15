@@ -37,7 +37,7 @@ class MenuCollectionViewController: UICollectionViewController {
                         guard let data = data else { return }
                         let decoder = JSONDecoder()
                         let downloadedResults = try decoder.decode(Menu.self, from: data)
-                        self.results = downloadedResults.results
+                        self.results = downloadedResults.meals
                         } catch let error {
                             print(error)
                         }
@@ -71,13 +71,13 @@ class MenuCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return results.count
+        return results.count - 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

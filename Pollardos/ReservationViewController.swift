@@ -11,10 +11,13 @@ import MessageUI
 import UserNotifications
 
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
+    
+    var accessGranted = false
+    var badgeCount = 0
 
     @IBOutlet weak var partyName: UITextField!
     @IBOutlet weak var partyAmount: UITextField!
-    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var monthTextField: UITextField!
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
@@ -42,7 +45,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {
             error in
             if error != nil {
-                print("Error adding a timer notification - \(error!.localizedDescription)")
+                print("Error with the timer notification - \(error!.localizedDescription)")
             }
         })
     }
@@ -50,10 +53,18 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        partyName.delegate = self
+        partyAmount.delegate = self
+        phoneNumber.delegate = self
+        monthTextField.delegate = self
+        dayTextField.delegate = self
+        timeTextField.delegate = self
+        emailTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
-    
+}
 
     /*
     // MARK: - Navigation
@@ -64,11 +75,11 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         // Pass the selected object to the new view controller.
     }
     */
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        dismiss(animated: true, completion: nil)
-    }
+//func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        dismiss(animated: true, completion: nil)
+//    }
 
-}
+
 
 
 //        let picker = MFMailComposeViewController()

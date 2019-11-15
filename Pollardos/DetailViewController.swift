@@ -21,16 +21,18 @@ class DetailViewController: UIViewController {
     @IBAction func addToCart(_ sender: Any) {
         //let addItem = foodTitle.text
     }
+    
     @IBAction func scaleMenuImage(_ sender: UIPinchGestureRecognizer) {
         foodImage.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier{
         case "addToCart":
             let itemAdded = foodTitle.text
             //get the segue destination's controller
             let vc = segue.destination as! CartTableViewController
-            
+            vc.foodTitle = itemAdded
             
         default: return
         }

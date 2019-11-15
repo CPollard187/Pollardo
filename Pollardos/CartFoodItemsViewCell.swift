@@ -14,8 +14,9 @@ class CartFoodItemsViewCell: UITableViewCell {
     
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var numOfItem: UILabel!
-    @IBAction func moreItems(_ sender: Any) {
-        
+    @IBAction func moreItems(_ sender: UIStepper) {
+        numOfItem.text = Int(sender.value).description
     }
+    
     
 }
