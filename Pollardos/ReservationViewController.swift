@@ -46,18 +46,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
             }
         })
     }
-//        let picker = MFMailComposeViewController()
-//        picker.mailComposeDelegate = self
-//
-//        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
-//
-//        picker.setToRecipients(["codypollard11@hotmail.com"])
-//        picker.setSubject("Pollardo Order")
-//        picker.setMessageBody(message, isHTML: true)
-        
-    }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,3 +69,13 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     }
 
 }
+
+
+//        let picker = MFMailComposeViewController()
+//        picker.mailComposeDelegate = self
+//
+//        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
+//
+//        picker.setToRecipients(["codypollard11@hotmail.com"])
+//        picker.setSubject("Pollardo Order")
+//        picker.setMessageBody(message, isHTML: true)

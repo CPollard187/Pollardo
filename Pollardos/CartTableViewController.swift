@@ -10,6 +10,9 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
 
+    var food: Item?
+    
+    @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var numberOfItem: UILabel!
     @IBOutlet weak var subtotalCost: UILabel!
     @IBOutlet weak var taxesCost: UILabel!
@@ -44,10 +47,12 @@ class CartTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartFoodItemsViewCell
+        
+        if let itemAdded = food {
+            foodName.text = itemAdded.name
+        }
+        
         return cell
     }
     
@@ -60,9 +65,9 @@ class CartTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -70,7 +75,7 @@ class CartTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

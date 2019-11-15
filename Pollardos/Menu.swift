@@ -12,19 +12,17 @@ struct Menu: Codable {
 }
 
 struct Item: Codable{
-    
     enum CodingKeys: String, CodingKey {
         
         case name = "strMeal"
         case category = "strCategory"
         case country = "strArea"
         case image = "strMealThumb"
-        
     }
     
     //MARK: - Properties
-    var name: String
-    var category: String
-    var country: String
+    var name: String?
+    var category: String?
+    var country: String?
     var image: String
 }

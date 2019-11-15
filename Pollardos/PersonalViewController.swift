@@ -54,7 +54,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
             
             //Create the trigger
             //In 30 seconds they will get the notification
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
             
             //Create the request
             let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
@@ -63,7 +63,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
             UNUserNotificationCenter.current().add(request, withCompletionHandler: {
                 error in
                 if error != nil {
-                    print("Error adding a timer notification - \(error!.localizedDescription)")
+                    print("Error with the timer - \(error!.localizedDescription)")
                 }
             })
         }

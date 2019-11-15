@@ -15,11 +15,9 @@ class MenuCollectionViewController: UICollectionViewController {
 
     var results: [Item] = []
     
-    @IBOutlet weak var menuImage: UIImageView!
-    @IBOutlet weak var menuName: UILabel!
+//    @IBOutlet weak var menuImage: UIImageView!
+//    @IBOutlet weak var menuName: UILabel!
     //@IBOutlet var collectionView: UICollectionView!
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +35,12 @@ class MenuCollectionViewController: UICollectionViewController {
             } else {
                     do {
                         guard let data = data else { return }
-                            
                         let decoder = JSONDecoder()
-                            
                         let downloadedResults = try decoder.decode(Menu.self, from: data)
-                            
                         self.results = downloadedResults.results
-                            
                         } catch let error {
                             print(error)
                         }
-                        
                         DispatchQueue.main.async {
                             self.collectionView.reloadData()
                         }
@@ -78,7 +71,7 @@ class MenuCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return results.count
+        return 3
     }
 
 
@@ -88,10 +81,9 @@ class MenuCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        //Should this be .row?
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodItem
+        //FIX ME - Should this be .row?
         let items = results[indexPath.row]
-        //FIX ME - cell doesnt have member menuName
         cell.menuName?.text = items.name
         
         let imageURL = URL(string: items.image)!
@@ -114,21 +106,18 @@ class MenuCollectionViewController: UICollectionViewController {
         // Configure the cell
         return cell
     }
+    
+    //Connect the detail view screen with the menu view screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier{
         case "details":
             //get the index of the selected cell
-            //FIX ME - Get index path
-            guard let indexPath = collectionView.indexPathsForSelectedItems else { return }
+            guard let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell) else { return }
             //retrieve the menuItem at selected cell
-            //FIX ME - Trying to get index path
-            let menuItem = results[indexPath.index(after: 0)]
+            let menuItem = results[indexPath.row]
             //get the segue destination's controller
             let vc = segue.destination as! DetailViewController
-            
-            //FIX ME - Cannot assign value of type Item to type Menu?
-            vc.item = menuItem
-            
+                vc.item = menuItem
         default: return
         }
     }

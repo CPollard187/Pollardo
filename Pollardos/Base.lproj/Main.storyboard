@@ -99,7 +99,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1a2-4g-m0M">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1a2-4g-m0M" customClass="FoodItem" customModule="Pollardos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="156" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -127,6 +127,8 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="qEG-I5-e0b" secondAttribute="bottom" constant="12" id="yRy-99-6Sz"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="menuImage" destination="1FM-Bz-tKO" id="mm0-1u-MFJ"/>
+                                    <outlet property="menuName" destination="qEG-I5-e0b" id="oVY-sC-b5N"/>
                                     <segue destination="2kq-vL-1MT" kind="show" identifier="details" id="DaE-PQ-S4J"/>
                                 </connections>
                             </collectionViewCell>
@@ -137,10 +139,6 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="MENU" id="NSe-Nf-k2t"/>
-                    <connections>
-                        <outlet property="menuImage" destination="1FM-Bz-tKO" id="pbS-F3-BqT"/>
-                        <outlet property="menuName" destination="qEG-I5-e0b" id="yW3-DU-E32"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrg-3g-gzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,7 +226,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="SIS-NL-oOg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="SIS-NL-oOg" customClass="CartFoodItemsViewCell" customModule="Pollardos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SIS-NL-oOg" id="uoF-9h-jZ4">
@@ -249,6 +247,9 @@
                                         </label>
                                         <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-pn-DrE">
                                             <rect key="frame" x="274" y="7" width="94" height="29"/>
+                                            <connections>
+                                                <action selector="moreItems:" destination="SIS-NL-oOg" eventType="valueChanged" id="2MN-59-KAI"/>
+                                            </connections>
                                         </stepper>
                                     </subviews>
                                     <constraints>
@@ -258,11 +259,15 @@
                                         <constraint firstItem="Kqp-3K-bD8" firstAttribute="top" secondItem="uoF-9h-jZ4" secondAttribute="topMargin" id="Nc9-mr-Ort"/>
                                         <constraint firstItem="Kqp-3K-bD8" firstAttribute="baseline" secondItem="OFg-NN-lE1" secondAttribute="baseline" id="bkM-z6-su2"/>
                                         <constraint firstItem="Fg5-pn-DrE" firstAttribute="leading" secondItem="Kqp-3K-bD8" secondAttribute="trailing" constant="19" id="kgO-nG-n4S"/>
-                                        <constraint firstItem="Kqp-3K-bD8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OFg-NN-lE1" secondAttribute="trailing" symbolic="YES" id="nb5-vL-C5z"/>
+                                        <constraint firstItem="Kqp-3K-bD8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OFg-NN-lE1" secondAttribute="trailing" constant="8" symbolic="YES" id="nb5-vL-C5z"/>
                                         <constraint firstItem="OFg-NN-lE1" firstAttribute="leading" secondItem="uoF-9h-jZ4" secondAttribute="leadingMargin" constant="11" id="rNh-wM-v5v"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Kqp-3K-bD8" secondAttribute="bottom" constant="1" id="x9F-6c-eFT"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foodName" destination="OFg-NN-lE1" id="RbJ-CX-NAJ"/>
+                                    <outlet property="numOfItem" destination="Kqp-3K-bD8" id="qKk-Wp-8vp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -410,6 +415,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ze-B2-ZGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="1957"/>
+        </scene>
+        <!--Animate Launch View Controller-->
+        <scene sceneID="ZVN-St-8eN">
+            <objects>
+                <viewController id="bfq-Rl-eE6" customClass="AnimateLaunchViewController" customModule="Pollardos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sPp-Zf-Gdn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pollardosLogoWorsds.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Mc-XH-0H3">
+                                <rect key="frame" x="-117" y="171" width="608" height="324"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="7Mc-XH-0H3" firstAttribute="leading" secondItem="sPp-Zf-Gdn" secondAttribute="leading" constant="-117" id="2DN-Xb-Jsf"/>
+                            <constraint firstItem="7Mc-XH-0H3" firstAttribute="top" secondItem="egt-SY-fHb" secondAttribute="top" constant="151" id="gZX-P7-kea"/>
+                            <constraint firstItem="egt-SY-fHb" firstAttribute="bottom" secondItem="7Mc-XH-0H3" secondAttribute="bottom" constant="172" id="hLD-Fn-Xns"/>
+                            <constraint firstAttribute="trailing" secondItem="7Mc-XH-0H3" secondAttribute="trailing" constant="-116" id="neG-Bj-Cvk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="egt-SY-fHb"/>
+                    </view>
+                    <connections>
+                        <outlet property="logo" destination="7Mc-XH-0H3" id="iKz-4t-J8D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBj-zl-MjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2175.1999999999998" y="777.66116941529242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pbz-zg-8wJ">
@@ -688,12 +722,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L94-nC-Uqx">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L94-nC-Uqx">
                                 <rect key="frame" x="67" y="84" width="240" height="128"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="SAJ-tt-7gd"/>
                                     <constraint firstAttribute="width" constant="240" id="hXH-qH-LMM"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GSu-q5-IFk" appends="YES" id="bSn-bl-66y"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6km-hP-lFS">
                                 <rect key="frame" x="166" y="232" width="42" height="21"/>
@@ -725,6 +763,10 @@
                                     <constraint firstAttribute="height" constant="30" id="gWj-nH-Nt0"/>
                                 </constraints>
                                 <state key="normal" title="Add to cart"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="2kq-vL-1MT" eventType="touchUpInside" id="oYg-dp-hbw"/>
+                                    <segue destination="UFp-R4-whb" kind="show" identifier="addToCart" id="Gu4-MY-YTj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -756,14 +798,25 @@
                     <connections>
                         <outlet property="foodCategory" destination="Wfe-3V-NOW" id="BEI-TS-uNX"/>
                         <outlet property="foodCountry" destination="cXi-y7-c80" id="pGS-mM-agl"/>
-                        <outlet property="foodImage" destination="L94-nC-Uqx" id="yJV-5C-ILq"/>
+                        <outlet property="foodImage" destination="L94-nC-Uqx" id="EoN-ao-ivt"/>
                         <outlet property="foodPrice" destination="JJr-2k-AcW" id="wHr-Er-PnS"/>
                         <outlet property="foodTitle" destination="6km-hP-lFS" id="mmX-a9-94v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGB-2A-A3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="GSu-q5-IFk">
+                    <connections>
+                        <action selector="scaleMenuImage:" destination="2kq-vL-1MT" id="IYb-MT-VFl"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2148" y="1214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pollardosLogoWorsds.png" width="800" height="600"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Gu4-MY-YTj"/>
+    </inferredMetricsTieBreakers>
 </document>

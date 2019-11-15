@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var item: Menu?
+    var item: Item?
     
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var foodTitle: UILabel!
@@ -18,15 +18,48 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var foodCountry: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     
+    @IBAction func addToCart(_ sender: Any) {
+        //let addItem = foodTitle.text
+    }
+    @IBAction func scaleMenuImage(_ sender: UIPinchGestureRecognizer) {
+        foodImage.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "addToCart":
+            let itemAdded = foodTitle.text
+            //get the segue destination's controller
+            let vc = segue.destination as! CartTableViewController
+            
+            
+        default: return
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //let items = results[indexPath.row]
+        
 
         if let menuItem = item {
-            //FIX ME - Menu has no member "-----"
             foodTitle.text = menuItem.name
             foodCategory.text = menuItem.category
             foodCountry.text = menuItem.country
-            foodImage.image = menuItem.image
+            let imageURL = URL(string: menuItem.image)!
+            let imageTask = URLSession.shared.downloadTask(with: imageURL, completionHandler: {
+                url,response,error in
+                if error == nil,
+                    let url = url,
+                    let data = try? Data(contentsOf: url),
+                    let image = UIImage(data: data){
+                    
+                    DispatchQueue.main.async {
+                        self.foodImage.image = image
+                    }
+                }
+            })
+            imageTask.resume()
         }
     }
     
