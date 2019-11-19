@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CartTableViewController: UITableViewController {
 
-    var foodTitle: String?
-    var food: Item?
+    //var foodTitle: String?
+    //var food: Item?
+    
+    let realm = try! Realm()
+    
+    lazy var results: Results<ItemsInCart> = { self.realm.objects(ItemsInCart.self) }()
     
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var numberOfItem: UILabel!
@@ -27,10 +32,13 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //If food is empty then hide the stepper and label
-        if foodTitle?.isEmpty == true {
-            numberOfItem.isHidden = true
-            //moreItems.isHidden = true
-        }
+//        if foodTitle?.isEmpty == true {
+//            numberOfItem.isHidden = true
+//            //moreItems.isHidden = true
+//        }
+        
+        
+        
         //foodName.text = foodTitle
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,7 +51,8 @@ class CartTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        print("num of items = \(results.count)")
+        return results.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,12 +63,19 @@ class CartTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartFoodItemsViewCell
-        cell.foodName.text = foodTitle
         
-        if let itemAdded = food {
-            foodName.text = itemAdded.name
+//        for item in results[indexPath.row]{
+//            cell.foodName.text = item.name
+//        }
+        
+        //let item = results[indexPath.row]
+        //cell.foodName?.text = results[indexPath.row].name
+        for i in 0..<results.count{
+            cell.foodName.text = results[i].name
+            print("indexPath =  \(results[i])")
+
         }
-        
+ 
         return cell
     }
     

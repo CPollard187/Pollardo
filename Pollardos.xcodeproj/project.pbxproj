@@ -3,16 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B06A3862374C78100C4AC8A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3842374C77E00C4AC8A /* RealmSwift.framework */; };
-		5B06A3872374C78100C4AC8A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3842374C77E00C4AC8A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B06A3882374C78100C4AC8A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3852374C78100C4AC8A /* Realm.framework */; };
-		5B06A3892374C78100C4AC8A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B06A3852374C78100C4AC8A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06A38C2374CF4B00C4AC8A /* Menu.swift */; };
 		5B0BD2E5237E4CB300C98D98 /* CartFoodItemsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */; };
+		5B0BD3142383683E00C98D98 /* ItemsInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD3132383683E00C98D98 /* ItemsInCart.swift */; };
 		5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D73233D9D7B00FC43CD /* AppDelegate.swift */; };
 		5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D75233D9D7B00FC43CD /* HomeViewController.swift */; };
 		5B357D79233D9D7B00FC43CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B357D77233D9D7B00FC43CD /* Main.storyboard */; };
@@ -26,6 +23,7 @@
 		5B4D3E1523751FB400C692F6 /* assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D3E1423751FB300C692F6 /* assets.bundle */; };
 		5B4D3E172375271F00C692F6 /* AnimateLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */; };
 		5B4D3E192375C56500C692F6 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D3E182375C56500C692F6 /* FoodItem.swift */; };
+		A0D98652F7937392B516FC18 /* Pods_Pollardos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F208050BCEB555A819C7BC /* Pods_Pollardos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,8 +33,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B06A3892374C78100C4AC8A /* Realm.framework in Embed Frameworks */,
-				5B06A3872374C78100C4AC8A /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,10 +40,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B06A3842374C77E00C4AC8A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		5B06A3852374C78100C4AC8A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		5B06A38C2374CF4B00C4AC8A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartFoodItemsViewCell.swift; sourceTree = "<group>"; };
+		5B0BD3132383683E00C98D98 /* ItemsInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInCart.swift; sourceTree = "<group>"; };
 		5B357D70233D9D7B00FC43CD /* Pollardos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pollardos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B357D73233D9D7B00FC43CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B357D75233D9D7B00FC43CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +58,9 @@
 		5B4D3E1423751FB300C692F6 /* assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = assets.bundle; sourceTree = "<group>"; };
 		5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLaunchViewController.swift; sourceTree = "<group>"; };
 		5B4D3E182375C56500C692F6 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		74F208050BCEB555A819C7BC /* Pods_Pollardos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pollardos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B881769EA57730D0AB95DC05 /* Pods-Pollardos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pollardos.debug.xcconfig"; path = "Target Support Files/Pods-Pollardos/Pods-Pollardos.debug.xcconfig"; sourceTree = "<group>"; };
+		E59AF17F15844BA208DEAEF8 /* Pods-Pollardos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pollardos.release.xcconfig"; path = "Target Support Files/Pods-Pollardos/Pods-Pollardos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +68,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B06A3882374C78100C4AC8A /* Realm.framework in Frameworks */,
-				5B06A3862374C78100C4AC8A /* RealmSwift.framework in Frameworks */,
+				A0D98652F7937392B516FC18 /* Pods_Pollardos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41CF978EAF4289754E805FF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B881769EA57730D0AB95DC05 /* Pods-Pollardos.debug.xcconfig */,
+				E59AF17F15844BA208DEAEF8 /* Pods-Pollardos.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B06A3802374C76800C4AC8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74F208050BCEB555A819C7BC /* Pods_Pollardos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,11 +95,10 @@
 		5B357D67233D9D7B00FC43CD = {
 			isa = PBXGroup;
 			children = (
-				5B06A3852374C78100C4AC8A /* Realm.framework */,
-				5B06A3842374C77E00C4AC8A /* RealmSwift.framework */,
 				5B357D72233D9D7B00FC43CD /* Pollardos */,
 				5B357D71233D9D7B00FC43CD /* Products */,
 				5B06A3802374C76800C4AC8A /* Frameworks */,
+				41CF978EAF4289754E805FF4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +121,7 @@
 				5B4D3E182375C56500C692F6 /* FoodItem.swift */,
 				5B357D77233D9D7B00FC43CD /* Main.storyboard */,
 				5B357E08236260A900FC43CD /* DetailViewController.swift */,
+				5B0BD3132383683E00C98D98 /* ItemsInCart.swift */,
 				5B357E0A236263A500FC43CD /* ReservationViewController.swift */,
 				5B357E0C236263C100FC43CD /* PersonalViewController.swift */,
 				5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */,
@@ -134,11 +141,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B357D85233D9D7D00FC43CD /* Build configuration list for PBXNativeTarget "Pollardos" */;
 			buildPhases = (
+				889FB8C99A3E7C2FCB7F37DA /* [CP] Check Pods Manifest.lock */,
 				5B357D6C233D9D7B00FC43CD /* Sources */,
 				5B357D6D233D9D7B00FC43CD /* Frameworks */,
 				5B357D6E233D9D7B00FC43CD /* Resources */,
 				5B06A38A2374C78100C4AC8A /* Embed Frameworks */,
 				5B06A38B2374C8E600C4AC8A /* ShellScript */,
+				8B1DB49E9D21FAC535B152ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +222,45 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
+		889FB8C99A3E7C2FCB7F37DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pollardos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B1DB49E9D21FAC535B152ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pollardos/Pods-Pollardos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pollardos/Pods-Pollardos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pollardos/Pods-Pollardos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -226,6 +274,7 @@
 				5B357D89233DA76700FC43CD /* CartTableViewController.swift in Sources */,
 				5B357E0D236263C100FC43CD /* PersonalViewController.swift in Sources */,
 				5B357D7C233D9D7B00FC43CD /* Pollardos.xcdatamodeld in Sources */,
+				5B0BD3142383683E00C98D98 /* ItemsInCart.swift in Sources */,
 				5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */,
 				5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */,
 				5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */,
@@ -375,6 +424,7 @@
 		};
 		5B357D86233D9D7D00FC43CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B881769EA57730D0AB95DC05 /* Pods-Pollardos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +447,7 @@
 		};
 		5B357D87233D9D7D00FC43CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59AF17F15844BA208DEAEF8 /* Pods-Pollardos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

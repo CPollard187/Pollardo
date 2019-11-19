@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import CoreSpotlight
 
 class HomeViewController: UIViewController {
 
@@ -33,8 +35,16 @@ class HomeViewController: UIViewController {
             }
         }
         task.resume()
+        
     }
-
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let userActivity = NSUserActivity(activityType: "ca.stclairconnect.01pollard.cody.Pollardos.openTab")
+            userActivity.title = "Pollardos Application"
+            userActivity.isEligibleForSearch = true
+            userActivity.isEligibleForPublicIndexing = true
+            self.userActivity = userActivity
+            self.userActivity?.becomeCurrent()
+    }
 }
 
