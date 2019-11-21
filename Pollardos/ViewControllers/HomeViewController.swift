@@ -24,9 +24,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //Testing to see if it displays
+        // Testing to see if it displays
         let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg")
         
+        companyInfo.text = "Welcome to our Pollardos! We are the top restaurant in the Windsor Essex area that offers chicken cuisine. Cheap and delicious is the motto we live by."
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             if error == nil {
                 let imageLoaded = UIImage(data: data!)

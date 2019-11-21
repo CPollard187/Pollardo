@@ -1,22 +1,21 @@
 //
-//  AnimateLaunchViewController.swift
+//  ReservationCompleteViewController.swift
 //  Pollardos
 //
-//  Created by Sabrina Gaspar on 2019-11-07.
+//  Created by Sabrina Gaspar on 2019-11-21.
 //  Copyright © 2019 Cody Pollard. All rights reserved.
 //
 
 import UIKit
 
-class AnimateLaunchViewController: UIViewController {
+class ReservationCompleteViewController: UIViewController {
 
-    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var details: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //UIView.animate(withDuration: 1.0, animations: <#T##() -> Void#>)
     }
     
 

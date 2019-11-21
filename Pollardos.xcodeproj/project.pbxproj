@@ -10,6 +10,9 @@
 		5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06A38C2374CF4B00C4AC8A /* Menu.swift */; };
 		5B0BD2E5237E4CB300C98D98 /* CartFoodItemsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */; };
 		5B0BD3142383683E00C98D98 /* ItemsInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD3132383683E00C98D98 /* ItemsInCart.swift */; };
+		5B0BD31623857B2B00C98D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0BD31523857B2B00C98D98 /* Assets.xcassets */; };
+		5B0BD32123873D6400C98D98 /* OrderCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD32023873D6400C98D98 /* OrderCompleteViewController.swift */; };
+		5B0BD32323873D7A00C98D98 /* ReservationCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */; };
 		5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D73233D9D7B00FC43CD /* AppDelegate.swift */; };
 		5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D75233D9D7B00FC43CD /* HomeViewController.swift */; };
 		5B357D79233D9D7B00FC43CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B357D77233D9D7B00FC43CD /* Main.storyboard */; };
@@ -20,7 +23,6 @@
 		5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E08236260A900FC43CD /* DetailViewController.swift */; };
 		5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E0A236263A500FC43CD /* ReservationViewController.swift */; };
 		5B357E0D236263C100FC43CD /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357E0C236263C100FC43CD /* PersonalViewController.swift */; };
-		5B4D3E1523751FB400C692F6 /* assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B4D3E1423751FB300C692F6 /* assets.bundle */; };
 		5B4D3E172375271F00C692F6 /* AnimateLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */; };
 		5B4D3E192375C56500C692F6 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D3E182375C56500C692F6 /* FoodItem.swift */; };
 		A0D98652F7937392B516FC18 /* Pods_Pollardos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F208050BCEB555A819C7BC /* Pods_Pollardos.framework */; };
@@ -43,6 +45,9 @@
 		5B06A38C2374CF4B00C4AC8A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartFoodItemsViewCell.swift; sourceTree = "<group>"; };
 		5B0BD3132383683E00C98D98 /* ItemsInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInCart.swift; sourceTree = "<group>"; };
+		5B0BD31523857B2B00C98D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B0BD32023873D6400C98D98 /* OrderCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteViewController.swift; sourceTree = "<group>"; };
+		5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCompleteViewController.swift; sourceTree = "<group>"; };
 		5B357D70233D9D7B00FC43CD /* Pollardos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pollardos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B357D73233D9D7B00FC43CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B357D75233D9D7B00FC43CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +60,6 @@
 		5B357E08236260A900FC43CD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B357E0A236263A500FC43CD /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		5B357E0C236263C100FC43CD /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
-		5B4D3E1423751FB300C692F6 /* assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = assets.bundle; sourceTree = "<group>"; };
 		5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLaunchViewController.swift; sourceTree = "<group>"; };
 		5B4D3E182375C56500C692F6 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		74F208050BCEB555A819C7BC /* Pods_Pollardos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pollardos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B0BD31B238730F600C98D98 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B0BD32023873D6400C98D98 /* OrderCompleteViewController.swift */,
+				5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */,
+				5B357D75233D9D7B00FC43CD /* HomeViewController.swift */,
+				5B357D88233DA76700FC43CD /* CartTableViewController.swift */,
+				5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */,
+				5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */,
+				5B357E08236260A900FC43CD /* DetailViewController.swift */,
+				5B357E0A236263A500FC43CD /* ReservationViewController.swift */,
+				5B357E0C236263C100FC43CD /* PersonalViewController.swift */,
+				5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5B0BD31D2387311000C98D98 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B357D77233D9D7B00FC43CD /* Main.storyboard */,
+				5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5B0BD31F2387312C00C98D98 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B4D3E182375C56500C692F6 /* FoodItem.swift */,
+				5B0BD3132383683E00C98D98 /* ItemsInCart.swift */,
+				5B06A38C2374CF4B00C4AC8A /* Menu.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5B357D67233D9D7B00FC43CD = {
 			isa = PBXGroup;
 			children = (
@@ -113,23 +153,13 @@
 		5B357D72233D9D7B00FC43CD /* Pollardos */ = {
 			isa = PBXGroup;
 			children = (
+				5B0BD31F2387312C00C98D98 /* Helpers */,
+				5B0BD31D2387311000C98D98 /* Storyboards */,
+				5B0BD31B238730F600C98D98 /* ViewControllers */,
 				5B357D73233D9D7B00FC43CD /* AppDelegate.swift */,
-				5B357D75233D9D7B00FC43CD /* HomeViewController.swift */,
-				5B357D88233DA76700FC43CD /* CartTableViewController.swift */,
-				5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */,
-				5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */,
-				5B4D3E182375C56500C692F6 /* FoodItem.swift */,
-				5B357D77233D9D7B00FC43CD /* Main.storyboard */,
-				5B357E08236260A900FC43CD /* DetailViewController.swift */,
-				5B0BD3132383683E00C98D98 /* ItemsInCart.swift */,
-				5B357E0A236263A500FC43CD /* ReservationViewController.swift */,
-				5B357E0C236263C100FC43CD /* PersonalViewController.swift */,
-				5B357D7F233D9D7D00FC43CD /* LaunchScreen.storyboard */,
-				5B4D3E162375271F00C692F6 /* AnimateLaunchViewController.swift */,
 				5B357D82233D9D7D00FC43CD /* Info.plist */,
 				5B357D7A233D9D7B00FC43CD /* Pollardos.xcdatamodeld */,
-				5B06A38C2374CF4B00C4AC8A /* Menu.swift */,
-				5B4D3E1423751FB300C692F6 /* assets.bundle */,
+				5B0BD31523857B2B00C98D98 /* Assets.xcassets */,
 			);
 			path = Pollardos;
 			sourceTree = "<group>";
@@ -196,8 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4D3E1523751FB400C692F6 /* assets.bundle in Resources */,
 				5B357D81233D9D7D00FC43CD /* LaunchScreen.storyboard in Resources */,
+				5B0BD31623857B2B00C98D98 /* Assets.xcassets in Resources */,
 				5B357D79233D9D7B00FC43CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0BD32123873D6400C98D98 /* OrderCompleteViewController.swift in Sources */,
 				5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */,
 				5B4D3E172375271F00C692F6 /* AnimateLaunchViewController.swift in Sources */,
 				5B0BD2E5237E4CB300C98D98 /* CartFoodItemsViewCell.swift in Sources */,
@@ -278,6 +309,7 @@
 				5B357E09236260A900FC43CD /* DetailViewController.swift in Sources */,
 				5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */,
 				5B06A38D2374CF4B00C4AC8A /* Menu.swift in Sources */,
+				5B0BD32323873D7A00C98D98 /* ReservationCompleteViewController.swift in Sources */,
 				5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */,
 				5B357D8B233DA78B00FC43CD /* MenuCollectionViewController.swift in Sources */,
 				5B4D3E192375C56500C692F6 /* FoodItem.swift in Sources */,

@@ -36,7 +36,15 @@ class CartTableViewController: UITableViewController {
 //            numberOfItem.isHidden = true
 //            //moreItems.isHidden = true
 //        }
+        let subtotal = 5 * results.count
+        let tax = (subtotal * 13) / 100
+        let total = tax + subtotal
         
+        subtotalCost.text = "$\(subtotal).00"
+        taxesCost.text = "$\(tax).00"
+        totalCost.text = "$\(total).00"
+
+
         
         
         //foodName.text = foodTitle

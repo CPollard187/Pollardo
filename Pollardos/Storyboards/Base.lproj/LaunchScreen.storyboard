@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pollardosLogoWorsds.png" translatesAutoresizingMaskIntoConstraints="NO" id="rAD-3E-HmG">
-                                <rect key="frame" x="-97" y="173" width="569" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pollardosWordsPNG" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-mQ-9xc">
+                                <rect key="frame" x="67" y="151" width="240" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -34,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pollardosLogoWorsds.png" width="800" height="600"/>
+        <image name="pollardosWordsPNG" width="200" height="200"/>
     </resources>
 </document>

@@ -20,6 +20,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var lNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var blurb: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         emailTextField.delegate = self
         phoneNumberTextField.delegate = self
         
-        
+        blurb.text = "*Orders take 45 minutes. Please be ready to pick up your meal within an hour of confirming the order*"
 
     }
     

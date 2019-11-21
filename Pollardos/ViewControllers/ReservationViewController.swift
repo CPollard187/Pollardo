@@ -22,6 +22,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var blurb: UILabel!
     
     @IBAction func confirmReservation(_ sender: Any) {
         
