@@ -79,7 +79,7 @@ class CartTableViewController: UITableViewController {
         //let item = results[indexPath.row]
         //cell.foodName?.text = results[indexPath.row].name
         for i in 0..<results.count{
-            cell.foodName.text = results[i].name
+            cell.foodName.text = results[i].name!
             print("indexPath =  \(results[i])")
 
         }

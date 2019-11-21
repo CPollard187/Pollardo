@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ReservationCompleteViewController: UIViewController {
 
     @IBOutlet weak var details: UILabel!
     
+    let realm = try! Realm()
+    
+    lazy var results: Results<Reservation> = { self.realm.objects(Reservation.self) }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        details.text = "You're reservation on \(results[0].month!) \(results[0].day!) at \(results[0].time!) for the party of \(results[0].name!) for \(results[0].amount!) people, has been booked! See you then!"
+        
+
+        
     }
     
 

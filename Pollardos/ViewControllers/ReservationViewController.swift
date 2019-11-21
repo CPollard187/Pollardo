@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import UserNotifications
+import RealmSwift
 
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
@@ -25,7 +26,44 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var blurb: UILabel!
     
     @IBAction func confirmReservation(_ sender: Any) {
+        createNotification()
         
+        let realm = try! Realm()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        var reservation = Reservation()
+        reservation.name = partyName.text
+        reservation.amount = partyAmount.text
+        reservation.month = monthTextField.text
+        reservation.day = dayTextField.text
+        reservation.time = timeTextField.text
+
+        
+        try! realm.write{
+            realm.add(reservation)
+        }
+        
+    }
+
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        partyName.delegate = self
+        partyAmount.delegate = self
+        phoneNumber.delegate = self
+        monthTextField.delegate = self
+        dayTextField.delegate = self
+        timeTextField.delegate = self
+        emailTextField.delegate = self
+        
+        blurb.text = "**"
+
+        // Do any additional setup after loading the view.
+    }
+    func createNotification(){
         //Create the content of the notification
         let content = UNMutableNotificationContent()
         content.title = "Reservation Confirmed!"
@@ -49,21 +87,6 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
                 print("Error with the timer notification - \(error!.localizedDescription)")
             }
         })
-    }
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        partyName.delegate = self
-        partyAmount.delegate = self
-        phoneNumber.delegate = self
-        monthTextField.delegate = self
-        dayTextField.delegate = self
-        timeTextField.delegate = self
-        emailTextField.delegate = self
-
-        // Do any additional setup after loading the view.
     }
 }
 
