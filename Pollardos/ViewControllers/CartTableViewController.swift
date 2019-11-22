@@ -59,13 +59,12 @@ class CartTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        print("num of items = \(results.count)")
-        return results.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return results.count
     }
 
     
@@ -76,15 +75,14 @@ class CartTableViewController: UITableViewController {
 //            cell.foodName.text = item.name
 //        }
         
-        //let item = results[indexPath.row]
+        let item = results[indexPath.row]
+        print(item)
         //cell.foodName?.text = results[indexPath.row].name
-        for i in 0..<results.count{
-            cell.foodName.text = results[i].name!
-            print("indexPath =  \(results[i])")
+        //for i in 0..<results.count{
+            cell.foodName.text = item.name
 
-        }
- 
         return cell
+ 
     }
     
 
@@ -102,6 +100,7 @@ class CartTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

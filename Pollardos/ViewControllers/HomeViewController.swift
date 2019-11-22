@@ -38,6 +38,9 @@ class HomeViewController: UIViewController {
         task.resume()
         
     }
+    
+    //Spotlight search
+    //When the user searches for 'Pollardos Application' it will show my app
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let userActivity = NSUserActivity(activityType: "ca.stclairconnect.01pollard.cody.Pollardos.openTab")

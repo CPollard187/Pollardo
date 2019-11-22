@@ -109,7 +109,6 @@
 				5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */,
 				5B357D75233D9D7B00FC43CD /* HomeViewController.swift */,
 				5B357D88233DA76700FC43CD /* CartTableViewController.swift */,
-				5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */,
 				5B357D8A233DA78B00FC43CD /* MenuCollectionViewController.swift */,
 				5B357E08236260A900FC43CD /* DetailViewController.swift */,
 				5B357E0A236263A500FC43CD /* ReservationViewController.swift */,
@@ -135,6 +134,7 @@
 				5B0BD3132383683E00C98D98 /* ItemsInCart.swift */,
 				5B06A38C2374CF4B00C4AC8A /* Menu.swift */,
 				5B0BD3242387407100C98D98 /* Reservation.swift */,
+				5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
