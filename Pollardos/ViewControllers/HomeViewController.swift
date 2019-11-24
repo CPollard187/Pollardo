@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
                 self.dealImage.image = imageLoaded
             }
         }
+        
         task.resume()
         
     }

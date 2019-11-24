@@ -8,11 +8,10 @@
 
 import UIKit
 import RealmSwift
+import Realm
 
 class CartTableViewController: UITableViewController {
 
-    //var foodTitle: String?
-    //var food: Item?
     
     let realm = try! Realm()
     
@@ -44,15 +43,6 @@ class CartTableViewController: UITableViewController {
         taxesCost.text = "$\(tax).00"
         totalCost.text = "$\(total).00"
 
-
-        
-        
-        //foodName.text = foodTitle
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -99,12 +89,18 @@ class CartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let itemToDelete = results[indexPath.row]
+                try! realm.write {
+                    realm.delete(itemToDelete)
+                }
             tableView.deleteRows(at: [indexPath], with: .fade)
+            viewDidLoad()
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
+    
     
 
     /*

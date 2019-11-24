@@ -495,7 +495,7 @@
         <scene sceneID="V9V-v9-9Zx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pZb-tQ-MWP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="nxQ-gA-5fk">
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="homeIcon-29" id="nxQ-gA-5fk">
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -516,7 +516,7 @@
         <scene sceneID="aAW-wF-PEf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y66-DR-Jso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" id="fFG-PK-kAw"/>
+                    <tabBarItem key="tabBarItem" title="Menu" selectedImage="menuIcon-29" id="fFG-PK-kAw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yZi-Zt-5OM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -857,7 +857,7 @@
         <scene sceneID="W6B-Xj-wJP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fym-RE-SKB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reservation" id="Wud-ni-BpT"/>
+                    <tabBarItem key="tabBarItem" title="Reservation" selectedImage="reservationIcon-29" id="Wud-ni-BpT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xL9-1B-QlO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -950,9 +950,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="homeIcon-29" width="29" height="29"/>
+        <image name="menuIcon-29" width="29" height="29"/>
         <image name="pollardosWordsPNG" width="200" height="200"/>
+        <image name="reservationIcon-29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gu4-MY-YTj"/>
+        <segue reference="9fr-xf-AkJ"/>
     </inferredMetricsTieBreakers>
 </document>
