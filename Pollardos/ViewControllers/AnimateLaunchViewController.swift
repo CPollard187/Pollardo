@@ -18,7 +18,7 @@ class AnimateLaunchViewController: UIViewController {
         super.viewDidLoad()
         makeBigger()
 
-        let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToHome), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToHome), userInfo: nil, repeats: false)
         
     }
     func makeBigger(){

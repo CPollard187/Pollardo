@@ -20,11 +20,11 @@ class ReservationCompleteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         details.text = "You're reservation on \(results[0].month!) \(results[0].day!) at \(results[0].time!) for the party of \(results[0].name!) for \(results[0].amount!) people, has been booked! See you then!"
         
-
-        //realm.delete(results)
+        try! realm.write{
+            realm.delete(results)
+        }
     }
     
 

@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OrderCompleteViewController: UIViewController {
 
+    @IBOutlet weak var totalDue: UILabel!
     @IBOutlet weak var details: UILabel!
+    let realm = try! Realm()
+    
+    lazy var results: Results<ItemsInCart> = { self.realm.objects(ItemsInCart.self) }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let subtotal = 5 * results.count
+        let tax = (subtotal * 13) / 100
+        let total = tax + subtotal
+        
+        details.text = "Your order has been confirmed! Please be ready to pick up in about 45 minutes."
+        totalDue.text = "Total = $\(total).00"
+        
+        try! realm.write{
+            realm.delete(results)
+        }
     }
     
 

@@ -13,7 +13,6 @@ import RealmSwift
 
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
-    var accessGranted = false
     var badgeCount = 0
 
     @IBOutlet weak var partyName: UITextField!
@@ -26,13 +25,13 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var blurb: UILabel!
     
     @IBAction func confirmReservation(_ sender: Any) {
-        createNotification()
+        reservationConfirmedNotification()
         
         let realm = try! Realm()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
-        var reservation = Reservation()
+        let reservation = Reservation()
         reservation.name = partyName.text
         reservation.amount = partyAmount.text
         reservation.month = monthTextField.text
@@ -50,32 +49,22 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        partyName.delegate = self
-        partyAmount.delegate = self
-        phoneNumber.delegate = self
-        monthTextField.delegate = self
-        dayTextField.delegate = self
-        timeTextField.delegate = self
-        emailTextField.delegate = self
-        
-        blurb.text = "**"
-
-        // Do any additional setup after loading the view.
+        blurb.text = "*You can reserve a seat for any day of the week*"
     }
-    func createNotification(){
-        //Create the content of the notification
+    
+    //in 5 seconds the notification will tell them the order was confirmed
+    func reservationConfirmedNotification() {
+        
         let content = UNMutableNotificationContent()
+        
         content.title = "Reservation Confirmed!"
-        content.body = "Your reservation is set!"
+        content.body = "Thank you for your reservation. See you soon!"
         content.sound = UNNotificationSound.default
         content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         
         //Create the trigger
-        //In 30 seconds they will get the notification
-        //FIX ME HERE
-        //I want it so it send them a notification the day before their reservation
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30.0, repeats: false)
+        //In 5 seconds they will get the notification
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         //Create the request
         let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
@@ -84,7 +73,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {
             error in
             if error != nil {
-                print("Error with the timer notification - \(error!.localizedDescription)")
+                print("Error with the timer - \(error!.localizedDescription)")
             }
         })
     }

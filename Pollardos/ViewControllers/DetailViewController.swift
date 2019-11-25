@@ -20,18 +20,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var foodPrice: UILabel!
     
     @IBAction func addToCart(_ sender: Any) {
-        //let addItem = foodTitle.text
         
         let realm = try! Realm()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
-        var name = ItemsInCart()
-        name.name = foodTitle.text
-        name.price.value = 5
+        let cartItem = ItemsInCart()
+        cartItem.name = foodTitle.text
+        cartItem.price.value = 5
         
         try! realm.write{
-            realm.add(name)
+            realm.add(cartItem)
         }
     }
     

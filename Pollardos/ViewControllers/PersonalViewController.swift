@@ -35,39 +35,71 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         emailTextField.delegate = self
         phoneNumberTextField.delegate = self
         
-        blurb.text = "*Orders take 45 minutes. Please be ready to pick up your meal within an hour of confirming the order*"
+        blurb.text = "*Orders take about 45 minutes*"
 
     }
     
+    //in 5 seconds the notification will tell them the order was confirmed
+    func orderConfirmedNotification() {
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Order Confirmed!"
+        content.body = "Your order will be ready in 45 minutes"
+        content.sound = UNNotificationSound.default
+        content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+        
+        //Create the trigger
+        //In 5 seconds they will get the notification
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        //Create the request
+        let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
+        
+        //Add the request
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {
+            error in
+            if error != nil {
+                print("Error with the timer - \(error!.localizedDescription)")
+            }
+        })
+    }
     
-    //When they hit confirm order it will send them a nitfication.
-    //****MAYBE PROMPT THEM WITH AN ALERT??????****
+    //In 45 minutes, the notification will tell them the order is ready for pickup
+    func orderReadyNotification() {
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Order Ready"
+        content.body = "Your order is ready for pick up!"
+        content.sound = UNNotificationSound.default
+        content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+        
+        //Create the trigger
+        //In 45 minutes they will get the notification
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2700, repeats: false)
+        
+        //Create the request
+        let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
+        
+        //Add the request
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {
+            error in
+            if error != nil {
+                print("Error with the timer - \(error!.localizedDescription)")
+            }
+        })
+    }
+    
+    
+    //When they hit confirm order it will send them a notfication for the order being confirmed and the order being ready for pickup
     @IBAction func confirmOrder(_ sender: Any) {
-        if accessGranted == true {
-            
-            //Create the content of the notification
-            let content = UNMutableNotificationContent()
-            content.title = "Order Confirmed!"
-            content.body = "Your order will be ready in 45 minutes!"
-            content.sound = UNNotificationSound.default
-            content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
-            
-            
-            //Create the trigger
-            //In 30 seconds they will get the notification
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
-            
-            //Create the request
-            let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
-            
-            //Add the request
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: {
-                error in
-                if error != nil {
-                    print("Error with the timer - \(error!.localizedDescription)")
-                }
-            })
+        orderConfirmedNotification()
+        orderReadyNotification()
+
         }
+}
+        //Email
 //        let picker = MFMailComposeViewController()
 //        picker.mailComposeDelegate = self
 //
@@ -77,7 +109,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
 //        picker.setSubject("Pollardo Order")
 //        picker.setMessageBody(message, isHTML: true)
         
-    }
+
 
     /*
     // MARK: - Navigation
@@ -90,8 +122,8 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     */
     
     //When they send the email it will close and go back to the confirm cart screen
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        dismiss(animated: true, completion: nil)
-    }
+//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//        dismiss(animated: true, completion: nil)
+//    }
 
-}
+
