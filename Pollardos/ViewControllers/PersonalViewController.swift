@@ -12,6 +12,7 @@ import UserNotifications
 
 class PersonalViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
+    //MARK: Properties
     var accessGranted = false
     var badgeCount = 0
     
@@ -22,14 +23,10 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var blurb: UILabel!
     
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-//        let fNameText = fNameTextField.text
-//        let lNameText = lNameTextField.text
-//        let phoneNumber = phoneNumberTextField.text
-        
+
         fNameTextField.delegate = self
         lNameTextField.delegate = self
         emailTextField.delegate = self
@@ -96,21 +93,8 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBAction func confirmOrder(_ sender: Any) {
         orderConfirmedNotification()
         orderReadyNotification()
-
         }
 }
-        //Email
-//        let picker = MFMailComposeViewController()
-//        picker.mailComposeDelegate = self
-//
-//        let message = "Hello my name is \(fNameTextField) \(lNameTextField). I just ordered from the Pollardo app. Please contact me at \(phoneNumberTextField) if there are any problems."
-//
-//        picker.setToRecipients(["codypollard11@hotmail.com"])
-//        picker.setSubject("Pollardo Order")
-//        picker.setMessageBody(message, isHTML: true)
-        
-
-
     /*
     // MARK: - Navigation
 

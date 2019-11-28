@@ -13,9 +13,11 @@ import RealmSwift
 
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
+    //MARK: Properites
     var badgeCount = 0
     var date: String = ""
 
+    //MARK: Outlets
     @IBOutlet weak var partyName: UITextField!
     @IBOutlet weak var partyAmount: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -26,6 +28,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var blurb: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
 
+    //MARK: Functions
     @IBAction func dateChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
@@ -69,7 +72,6 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         content.sound = UNNotificationSound.default
         content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
         
-        //Create the trigger
         //In 5 seconds they will get the notification
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
@@ -95,18 +97,3 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         // Pass the selected object to the new view controller.
     }
     */
-//func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//        dismiss(animated: true, completion: nil)
-//    }
-
-
-
-
-//        let picker = MFMailComposeViewController()
-//        picker.mailComposeDelegate = self
-//
-//        let message = "Hello, im trying to set up a reservation under the \(partyName) party. We would like to reserve a table of \(partyAmount) on \(monthTextField) \(dayTextField) at \(timeTextField). If there are any issues, call \(phoneNumber)"
-//
-//        picker.setToRecipients(["codypollard11@hotmail.com"])
-//        picker.setSubject("Pollardo Order")
-//        picker.setMessageBody(message, isHTML: true)

@@ -11,14 +11,17 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
 
+    //MARK: Properties
     var item: Item?
     
+    //MARK: Outlets
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var foodTitle: UILabel!
     @IBOutlet weak var foodCategory: UILabel!
     @IBOutlet weak var foodCountry: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     
+    //MARK: Functions
     @IBAction func addToCart(_ sender: Any) {
         
         let realm = try! Realm()

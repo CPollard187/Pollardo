@@ -12,17 +12,20 @@ import Realm
 
 class CartTableViewController: UITableViewController {
 
-    
+    //MARK: Properties
     let realm = try! Realm()
     
     lazy var results: Results<ItemsInCart> = { self.realm.objects(ItemsInCart.self) }()
     
+    //MARK: Outlets
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var numberOfItem: UILabel!
     @IBOutlet weak var subtotalCost: UILabel!
     @IBOutlet weak var taxesCost: UILabel!
     @IBOutlet weak var totalCost: UILabel!
     
+    
+    //MARK: Functions
     @IBAction func checkoutButton(_ sender: Any) {
         
         
@@ -30,11 +33,7 @@ class CartTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //If food is empty then hide the stepper and label
-//        if foodTitle?.isEmpty == true {
-//            numberOfItem.isHidden = true
-//            //moreItems.isHidden = true
-//        }
+
         let subtotal = 5 * results.count
         let tax = (subtotal * 13) / 100
         let total = tax + subtotal
@@ -54,6 +53,7 @@ class CartTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        //get the number of items in the databse and set it to the numberOfRowsInSections
         return results.count
     }
 
@@ -61,15 +61,10 @@ class CartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartFoodItemsViewCell
         
-//        for item in results[indexPath.row]{
-//            cell.foodName.text = item.name
-//        }
-        
+        //Get all of the items at each index
         let item = results[indexPath.row]
         print(item)
-        //cell.foodName?.text = results[indexPath.row].name
-        //for i in 0..<results.count{
-            cell.foodName.text = item.name
+        cell.foodName.text = item.name
 
         return cell
  
@@ -90,6 +85,7 @@ class CartTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             let itemToDelete = results[indexPath.row]
+            //Delete that specific item from the database
                 try! realm.write {
                     realm.delete(itemToDelete)
                 }

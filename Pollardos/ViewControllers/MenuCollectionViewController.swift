@@ -13,12 +13,10 @@ import UIKit
 
 class MenuCollectionViewController: UICollectionViewController {
 
+    //MARK: Properties
     var results: [Item] = []
     
-//    @IBOutlet weak var menuImage: UIImageView!
-//    @IBOutlet weak var menuName: UILabel!
-    //@IBOutlet var collectionView: UICollectionView!
-    
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -26,9 +24,8 @@ class MenuCollectionViewController: UICollectionViewController {
         
         let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         
-        //Testing to see if it displays
-        //let apiURL = URL(string: "https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg")
         results = []
+        
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             if let error = error {
                 print("ERROR - \(error)")
@@ -47,14 +44,6 @@ class MenuCollectionViewController: UICollectionViewController {
                     }
                 }
                 task.resume()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-
-        // Do any additional setup after loading the view.
     }    
     
     /*
@@ -83,9 +72,12 @@ class MenuCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodItem
 
+        //Get each result from the api
         let items = results[indexPath.row]
+        //Get the name of the meal and set it too the label
         cell.menuName?.text = items.name
         
+        //Get the image URL from the API
         let imageURL = URL(string: items.image)!
         
         //Get the image url and convert into an image

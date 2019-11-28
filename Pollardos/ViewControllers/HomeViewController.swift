@@ -30,10 +30,12 @@ class HomeViewController: UIViewController {
         companyInfo.text = "Welcome to our Pollardos! We are the top restaurant in the Windsor Essex area that offers chicken cuisine. Cheap and delicious is the motto we live by."
     }
 
+    //When they click the image it will add that item to the cart
     @IBAction func sendToCart(_ sender: UIButton) {
         addItemToCart()
     }
     
+    //Get the name of the label and add it to the database
     func addItemToCart(){
         let realm = try! Realm()
         
@@ -48,6 +50,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    //Get the image from the API
     func getImageDeal(){
         let imageURL = URL(string: "https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg")
         let task = URLSession.shared.dataTask(with: imageURL!) { (data, response, error) in
@@ -58,6 +61,8 @@ class HomeViewController: UIViewController {
         }
         task.resume()
     }
+    
+    //get the name of the meal from the API
     func getNameDeal(){
         let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         results = []
