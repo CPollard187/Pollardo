@@ -82,7 +82,7 @@ class MenuCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodItem
-        //FIX ME - Should this be .row?
+
         let items = results[indexPath.row]
         cell.menuName?.text = items.name
         
@@ -96,7 +96,6 @@ class MenuCollectionViewController: UICollectionViewController {
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data){
                 DispatchQueue.main.async {
-                    //FIX ME - cell doesnt have member menuImage
                     cell.menuImage?.image = image
                 }
             }

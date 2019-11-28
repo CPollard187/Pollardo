@@ -15,12 +15,12 @@ class ReservationCompleteViewController: UIViewController {
     
     let realm = try! Realm()
     
-    lazy var results: Results<Reservation> = { self.realm.objects(Reservation.self) }()
+    lazy var results: Results<ReservationInformation> = { self.realm.objects(ReservationInformation.self) }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        details.text = "You're reservation on \(results[0].month!) \(results[0].day!) at \(results[0].time!) for the party of \(results[0].name!) for \(results[0].amount!) people, has been booked! See you then!"
+        details.text = "You're reservation on \(results[0].date!) for the party of \(results[0].name!) for \(results[0].amount!) people, has been booked! See you then!"
         
         try! realm.write{
             realm.delete(results)

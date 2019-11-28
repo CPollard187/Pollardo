@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/sabrinagaspar/Desktop/Pollardos/Pollardos/Helpers/ReservationInformation.swift">
+   </FileRef>
+   <FileRef
       location = "group:Pollardos.xcodeproj">
    </FileRef>
    <FileRef

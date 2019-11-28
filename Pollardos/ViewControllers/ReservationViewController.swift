@@ -14,6 +14,7 @@ import RealmSwift
 class ReservationViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     var badgeCount = 0
+    var date: String = ""
 
     @IBOutlet weak var partyName: UITextField!
     @IBOutlet weak var partyAmount: UITextField!
@@ -23,6 +24,14 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var blurb: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        date = dateFormatter.string(from: sender.date)
+    }
+    
     
     @IBAction func confirmReservation(_ sender: Any) {
         reservationConfirmedNotification()
@@ -31,12 +40,10 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
-        let reservation = Reservation()
+        let reservation = ReservationInformation()
         reservation.name = partyName.text
         reservation.amount = partyAmount.text
-        reservation.month = monthTextField.text
-        reservation.day = dayTextField.text
-        reservation.time = timeTextField.text
+        reservation.date = date
 
         
         try! realm.write{

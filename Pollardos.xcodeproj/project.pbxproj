@@ -13,9 +13,9 @@
 		5B0BD31623857B2B00C98D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0BD31523857B2B00C98D98 /* Assets.xcassets */; };
 		5B0BD32123873D6400C98D98 /* OrderCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD32023873D6400C98D98 /* OrderCompleteViewController.swift */; };
 		5B0BD32323873D7A00C98D98 /* ReservationCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */; };
-		5B0BD3252387407100C98D98 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD3242387407100C98D98 /* Reservation.swift */; };
 		5B0BD329238768C700C98D98 /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B0BD327238768C700C98D98 /* Righteous-Regular.ttf */; };
 		5B0BD32A238768C700C98D98 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B0BD328238768C700C98D98 /* OFL.txt */; };
+		5B0BD32E238F0A4F00C98D98 /* ReservationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD32D238F0A4F00C98D98 /* ReservationInformation.swift */; };
 		5B357D74233D9D7B00FC43CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D73233D9D7B00FC43CD /* AppDelegate.swift */; };
 		5B357D76233D9D7B00FC43CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B357D75233D9D7B00FC43CD /* HomeViewController.swift */; };
 		5B357D79233D9D7B00FC43CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B357D77233D9D7B00FC43CD /* Main.storyboard */; };
@@ -51,9 +51,9 @@
 		5B0BD31523857B2B00C98D98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B0BD32023873D6400C98D98 /* OrderCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteViewController.swift; sourceTree = "<group>"; };
 		5B0BD32223873D7A00C98D98 /* ReservationCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCompleteViewController.swift; sourceTree = "<group>"; };
-		5B0BD3242387407100C98D98 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		5B0BD327238768C700C98D98 /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
 		5B0BD328238768C700C98D98 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		5B0BD32D238F0A4F00C98D98 /* ReservationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationInformation.swift; path = /Users/sabrinagaspar/Desktop/Pollardos/Pollardos/Helpers/ReservationInformation.swift; sourceTree = "<absolute>"; };
 		5B357D70233D9D7B00FC43CD /* Pollardos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pollardos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B357D73233D9D7B00FC43CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B357D75233D9D7B00FC43CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			children = (
 				5B4D3E182375C56500C692F6 /* FoodItem.swift */,
 				5B0BD3132383683E00C98D98 /* ItemsInCart.swift */,
+				5B0BD32D238F0A4F00C98D98 /* ReservationInformation.swift */,
 				5B06A38C2374CF4B00C4AC8A /* Menu.swift */,
-				5B0BD3242387407100C98D98 /* Reservation.swift */,
 				5B0BD2E4237E4CB300C98D98 /* CartFoodItemsViewCell.swift */,
 			);
 			path = Helpers;
@@ -331,8 +331,8 @@
 				5B0BD32323873D7A00C98D98 /* ReservationCompleteViewController.swift in Sources */,
 				5B357E0B236263A500FC43CD /* ReservationViewController.swift in Sources */,
 				5B357D8B233DA78B00FC43CD /* MenuCollectionViewController.swift in Sources */,
-				5B0BD3252387407100C98D98 /* Reservation.swift in Sources */,
 				5B4D3E192375C56500C692F6 /* FoodItem.swift in Sources */,
+				5B0BD32E238F0A4F00C98D98 /* ReservationInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 492PKJ62PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -503,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 492PKJ62PP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
