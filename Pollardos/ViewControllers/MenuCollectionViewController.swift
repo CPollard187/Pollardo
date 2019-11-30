@@ -19,8 +19,8 @@ class MenuCollectionViewController: UICollectionViewController {
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView!.delegate = self
+        collectionView!.dataSource = self
         
         let apiURL = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
         
@@ -39,7 +39,7 @@ class MenuCollectionViewController: UICollectionViewController {
                             print(error)
                         }
                         DispatchQueue.main.async {
-                            self.collectionView.reloadData()
+                            self.collectionView!.reloadData()
                         }
                     }
                 }
@@ -103,7 +103,7 @@ class MenuCollectionViewController: UICollectionViewController {
         switch segue.identifier{
         case "details":
             //get the index of the selected cell
-            guard let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell) else { return }
+            guard let indexPath = collectionView!.indexPath(for: sender as! UICollectionViewCell) else { return }
             //retrieve the menuItem at selected cell
             let menuItem = results[indexPath.row]
             //get the segue destination's controller
