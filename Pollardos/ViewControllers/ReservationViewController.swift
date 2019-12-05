@@ -37,6 +37,19 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     
     
     @IBAction func confirmReservation(_ sender: Any) {
+        
+        guard let partyNameText = partyName.text, !partyNameText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let partyAmountText = partyAmount.text, !partyAmountText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let phoneNumberText = phoneNumber.text, !phoneNumberText.isEmpty else {
+            alertMessage()
+            return
+        }
         reservationConfirmedNotification()
         
         let realm = try! Realm()
@@ -60,6 +73,13 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         blurb.text = "*You can reserve a seat for any day of the week*"
+    }
+    
+    func alertMessage(){
+        let alert = UIAlertController(title: "Pollardos", message: "Please Fill In All Of The Text Fields", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //in 5 seconds the notification will tell them the order was confirmed
