@@ -75,6 +75,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         blurb.text = "*You can reserve a seat for any day of the week*"
     }
     
+    //Show alert when a user doesnt enter information in all text fields
     func alertMessage(){
         let alert = UIAlertController(title: "Pollardos", message: "Please Fill In All Of The Text Fields", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)

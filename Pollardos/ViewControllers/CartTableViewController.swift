@@ -27,7 +27,7 @@ class CartTableViewController: UITableViewController {
     
     //MARK: Functions
     @IBAction func checkoutButton(_ sender: Any) {
-        
+       
         
     }
     
@@ -42,6 +42,14 @@ class CartTableViewController: UITableViewController {
         taxesCost.text = "$\(tax).00"
         totalCost.text = "$\(total).00"
 
+    }
+    
+    //Show alert when the user tries to checkout with nothing in the cart
+    func alertMessage(){
+        let alert = UIAlertController(title: "Pollardos", message: "Please Add An Item To Your Cart", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -61,6 +69,7 @@ class CartTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartFoodItemsViewCell
         
+    
         //Get all of the items at each index
         let item = results[indexPath.row]
         print(item)
