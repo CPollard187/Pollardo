@@ -59,6 +59,17 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         blurb.text = "*Orders take about 45 minutes*"
 
     }
+    //When users touch outside the keyboard, the keyboard will close
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //When you hit return on the keyboard it will now close the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     //Show an alert when the user fails to fill in all of the text fields
     func alertMessage(){

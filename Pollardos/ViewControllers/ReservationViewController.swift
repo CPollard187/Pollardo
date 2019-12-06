@@ -75,6 +75,17 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         blurb.text = "*You can reserve a seat for any day of the week*"
     }
     
+    //When users touch outside the keyboard, the keyboard will close
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //When you hit return on the keyboard it will now close the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     //Show alert when a user doesnt enter information in all text fields
     func alertMessage(){
         let alert = UIAlertController(title: "Pollardos", message: "Please Fill In All Of The Text Fields", preferredStyle: UIAlertController.Style.alert)
