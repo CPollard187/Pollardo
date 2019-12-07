@@ -108,38 +108,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ug0-U0-daX">
-                            <size key="itemSize" width="182" height="176"/>
+                            <size key="itemSize" width="180" height="176"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="1a2-4g-m0M" customClass="FoodItem" customModule="Pollardos" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="182" height="176"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000000000002" contentMode="center" reuseIdentifier="cell" id="1a2-4g-m0M" customClass="FoodItem" customModule="Pollardos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="182" height="176"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="176"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-Bz-tKO">
-                                            <rect key="frame" x="36" y="5" width="111" height="64.5"/>
+                                            <rect key="frame" x="36" y="40" width="111" height="79"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEG-I5-e0b">
-                                            <rect key="frame" x="0.0" y="85.5" width="182" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="137" width="180" height="21.5"/>
                                             <fontDescription key="fontDescription" name="Righteous-Regular" family="Righteous" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qEG-I5-e0b" firstAttribute="leading" secondItem="1a2-4g-m0M" secondAttribute="leading" id="63i-pj-Rwg"/>
-                                    <constraint firstAttribute="trailing" secondItem="qEG-I5-e0b" secondAttribute="trailing" id="Okt-5b-hkk"/>
-                                    <constraint firstItem="1FM-Bz-tKO" firstAttribute="top" secondItem="1a2-4g-m0M" secondAttribute="top" constant="5" id="a51-9i-utO"/>
-                                    <constraint firstItem="1FM-Bz-tKO" firstAttribute="leading" secondItem="1a2-4g-m0M" secondAttribute="leading" constant="36" id="b0z-VC-nbV"/>
-                                    <constraint firstAttribute="trailing" secondItem="1FM-Bz-tKO" secondAttribute="trailing" constant="35" id="iXV-EL-v7C"/>
-                                    <constraint firstItem="qEG-I5-e0b" firstAttribute="top" secondItem="1FM-Bz-tKO" secondAttribute="bottom" constant="16" id="jWB-fD-Nve"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="qEG-I5-e0b" secondAttribute="bottom" constant="12" id="yRy-99-6Sz"/>
+                                    <constraint firstItem="1FM-Bz-tKO" firstAttribute="leading" secondItem="1a2-4g-m0M" secondAttribute="leadingMargin" constant="28" id="7KE-8P-ZHs"/>
+                                    <constraint firstAttribute="bottom" secondItem="qEG-I5-e0b" secondAttribute="bottom" constant="17.5" id="CqO-RZ-VRK"/>
+                                    <constraint firstItem="1FM-Bz-tKO" firstAttribute="top" secondItem="1a2-4g-m0M" secondAttribute="topMargin" constant="12" id="FX9-fk-jft"/>
+                                    <constraint firstItem="qEG-I5-e0b" firstAttribute="leading" secondItem="1a2-4g-m0M" secondAttribute="leading" id="FgD-R3-cvy"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="1FM-Bz-tKO" secondAttribute="trailing" constant="25" id="a1K-fA-I3n"/>
+                                    <constraint firstItem="qEG-I5-e0b" firstAttribute="top" secondItem="1FM-Bz-tKO" secondAttribute="bottom" constant="18" id="ef2-pX-TOc"/>
+                                    <constraint firstAttribute="trailing" secondItem="qEG-I5-e0b" secondAttribute="trailing" id="wEb-06-m9O"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="menuImage" destination="1FM-Bz-tKO" id="mm0-1u-MFJ"/>
@@ -207,7 +208,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV2-In-eEG">
+                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV2-In-eEG">
                                     <rect key="frame" x="150.5" y="166.5" width="74" height="34"/>
                                     <fontDescription key="fontDescription" name="Righteous-Regular" family="Righteous" pointSize="17"/>
                                     <state key="normal" title="Checkout"/>

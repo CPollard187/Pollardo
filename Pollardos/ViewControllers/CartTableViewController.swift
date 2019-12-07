@@ -27,7 +27,11 @@ class CartTableViewController: UITableViewController {
     
     //MARK: Functions
     @IBAction func checkoutButton(_ sender: Any) {
-       
+        //If there is no items in the cart then display an alert
+        if results.count == 0 {
+            alertMessage()
+            return
+        }
         
     }
     
@@ -46,7 +50,7 @@ class CartTableViewController: UITableViewController {
     
     //Show alert when the user tries to checkout with nothing in the cart
     func alertMessage(){
-        let alert = UIAlertController(title: "Pollardos", message: "Please Add An Item To Your Cart", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Pollardos", message: "Please add an item to your cart", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)

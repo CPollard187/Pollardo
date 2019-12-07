@@ -65,7 +65,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     //When you hit return on the keyboard it will now close the keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func returnRemovesKeyboard(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -73,7 +73,7 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     //Show an alert when the user fails to fill in all of the text fields
     func alertMessage(){
-        let alert = UIAlertController(title: "Pollardos", message: "Please Fill In All Of The Text Fields", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Pollardos", message: "Please fill in all of the text fields", preferredStyle: UIAlertController.Style.alert)
         let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
