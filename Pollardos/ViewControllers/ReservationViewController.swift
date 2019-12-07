@@ -37,6 +37,20 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     
     
     @IBAction func confirmReservation(_ sender: Any) {
+        
+        guard let partyNameText = partyName.text, !partyNameText.isEmpty else {
+            alertMessage()
+            
+            return
+        }
+        guard let partyAmountText = partyAmount.text, !partyAmountText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let phoneNumberText = phoneNumber.text, !phoneNumberText.isEmpty else {
+            alertMessage()
+            return
+        }
         reservationConfirmedNotification()
         
         let realm = try! Realm()
@@ -60,6 +74,25 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         blurb.text = "*You can reserve a seat for any day of the week*"
+    }
+    
+    //When users touch outside the keyboard, the keyboard will close
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //When you hit return on the keyboard it will now close the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //Show alert when a user doesnt enter information in all text fields
+    func alertMessage(){
+        let alert = UIAlertController(title: "Pollardos", message: "Please fill in all of the text fields", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //in 5 seconds the notification will tell them the order was confirmed

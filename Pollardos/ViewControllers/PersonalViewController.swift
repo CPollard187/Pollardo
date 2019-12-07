@@ -23,6 +23,30 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var blurb: UILabel!
     
+    //When they hit confirm order it will send them a notfication for the order being confirmed and the order being ready for pickup
+    @IBAction func confirmOrder(_ sender: Any) {
+        
+        guard let fnameText = fNameTextField.text, !fnameText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let lnameText = lNameTextField.text, !lnameText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let emailText = emailTextField.text, !emailText.isEmpty else {
+            alertMessage()
+            return
+        }
+        guard let phoneNumberText = phoneNumberTextField.text, !phoneNumberText.isEmpty else {
+            alertMessage()
+            return
+        }
+        
+        orderConfirmedNotification()
+        orderReadyNotification()
+    }
+    
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +58,25 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         blurb.text = "*Orders take about 45 minutes*"
 
+    }
+    //When users touch outside the keyboard, the keyboard will close
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //When you hit return on the keyboard it will now close the keyboard
+    func returnRemovesKeyboard(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    //Show an alert when the user fails to fill in all of the text fields
+    func alertMessage(){
+        let alert = UIAlertController(title: "Pollardos", message: "Please fill in all of the text fields", preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //in 5 seconds the notification will tell them the order was confirmed
@@ -87,13 +130,6 @@ class PersonalViewController: UIViewController, MFMailComposeViewControllerDeleg
             }
         })
     }
-    
-    
-    //When they hit confirm order it will send them a notfication for the order being confirmed and the order being ready for pickup
-    @IBAction func confirmOrder(_ sender: Any) {
-        orderConfirmedNotification()
-        orderReadyNotification()
-        }
 }
     /*
     // MARK: - Navigation
