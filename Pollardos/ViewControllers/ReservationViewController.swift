@@ -40,6 +40,7 @@ class ReservationViewController: UIViewController, MFMailComposeViewControllerDe
         
         guard let partyNameText = partyName.text, !partyNameText.isEmpty else {
             alertMessage()
+            
             return
         }
         guard let partyAmountText = partyAmount.text, !partyAmountText.isEmpty else {
