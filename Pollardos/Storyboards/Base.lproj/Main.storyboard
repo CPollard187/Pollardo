@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Deal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdb-Wi-2vb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Deal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdb-Wi-2vb">
                                 <rect key="frame" x="0.0" y="379" width="375" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Righteous-Regular" family="Righteous" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -938,6 +938,6 @@
         <image name="reservationIcon-29" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gu4-MY-YTj"/>
+        <segue reference="9fr-xf-AkJ"/>
     </inferredMetricsTieBreakers>
 </document>
